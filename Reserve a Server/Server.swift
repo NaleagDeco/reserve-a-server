@@ -10,5 +10,5 @@
 
 struct Server {
     let name : String
-    var unused : Bool
+    var inUse : Bool
 }

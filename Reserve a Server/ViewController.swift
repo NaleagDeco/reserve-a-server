@@ -8,9 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    let fb = Firebase(url: "https://dazzling-fire-7049.firebaseio.com/")!
-    var servers : Array<(String, Bool)> = []
+class ViewController: UIViewController, UITableViewDataSource {
+    let fb = Firebase(url: "https://dazzling-fire-7049.firebaseio.com/")
+    let cellIdentifier = "ServerItem"
+    
+    var servers : [Server] = []
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +28,24 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func populateServerList(fds : FDataSnapshot!) -> Void {
-        let serverList = fds.value["servers"] as Dictionary<String, Bool>
+    func populateServerList(fds : FDataSnapshot!) {
+        let serverList = fds.value["servers"] as [String: Bool]
         
-        servers = map(serverList, {s in s})
-        println(servers)
+        servers = map(serverList, {s in Server(s)})
+        tableView.reloadData()
     }
-
-
+    
+    // MARK: UITableViewDataSource conformity
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return servers.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as ServerCellView
+        let server = servers[indexPath.row]
+        
+        cell.setFromServer(server)
+        return cell
+    }
 }
-

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8942767E1ABF6BFA0080F700 /* ServerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942767D1ABF6BFA0080F700 /* ServerCellView.swift */; };
 		89A1EAFB1ABE4084008F03B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A1EAFA1ABE4084008F03B3 /* AppDelegate.swift */; };
 		89A1EAFD1ABE4084008F03B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A1EAFC1ABE4084008F03B3 /* ViewController.swift */; };
 		89A1EB001ABE4084008F03B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A1EAFE1ABE4084008F03B3 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		2D2220F7739AEFD286536A14 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FEC068A8005A708BB509F97 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8942767D1ABF6BFA0080F700 /* ServerCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCellView.swift; sourceTree = "<group>"; };
 		89A1EAF51ABE4084008F03B3 /* Reserve a Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reserve a Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A1EAF91ABE4084008F03B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89A1EAFA1ABE4084008F03B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				89A1EAF81ABE4084008F03B3 /* Supporting Files */,
 				89EB30C61ABE857D0041F60A /* Reserve a Server-Bridging-Header.h */,
 				89EB30CA1ABE8BAE0041F60A /* Server.swift */,
+				8942767D1ABF6BFA0080F700 /* ServerCellView.swift */,
 			);
 			path = "Reserve a Server";
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89A1EAFD1ABE4084008F03B3 /* ViewController.swift in Sources */,
+				8942767E1ABF6BFA0080F700 /* ServerCellView.swift in Sources */,
 				89EB30CB1ABE8BAE0041F60A /* Server.swift in Sources */,
 				89A1EAFB1ABE4084008F03B3 /* AppDelegate.swift in Sources */,
 			);
