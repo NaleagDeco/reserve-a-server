@@ -13,6 +13,7 @@
 		89A1EB021ABE4084008F03B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A1EB011ABE4084008F03B3 /* Images.xcassets */; };
 		89A1EB051ABE4084008F03B3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A1EB031ABE4084008F03B3 /* LaunchScreen.xib */; };
 		89A1EB111ABE4084008F03B3 /* Reserve_a_ServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A1EB101ABE4084008F03B3 /* Reserve_a_ServerTests.swift */; };
+		89EB30CB1ABE8BAE0041F60A /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EB30CA1ABE8BAE0041F60A /* Server.swift */; };
 		D68FBCC25C65C39DA7DF99FC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D2220F7739AEFD286536A14 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,8 @@
 		89A1EB0A1ABE4084008F03B3 /* Reserve a ServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reserve a ServerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A1EB0F1ABE4084008F03B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89A1EB101ABE4084008F03B3 /* Reserve_a_ServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve_a_ServerTests.swift; sourceTree = "<group>"; };
+		89EB30C61ABE857D0041F60A /* Reserve a Server-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reserve a Server-Bridging-Header.h"; sourceTree = "<group>"; };
+		89EB30CA1ABE8BAE0041F60A /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		F082170FA88B8A40F142FA7E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +110,8 @@
 				89A1EB011ABE4084008F03B3 /* Images.xcassets */,
 				89A1EB031ABE4084008F03B3 /* LaunchScreen.xib */,
 				89A1EAF81ABE4084008F03B3 /* Supporting Files */,
+				89EB30C61ABE857D0041F60A /* Reserve a Server-Bridging-Header.h */,
+				89EB30CA1ABE8BAE0041F60A /* Server.swift */,
 			);
 			path = "Reserve a Server";
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89A1EAFD1ABE4084008F03B3 /* ViewController.swift in Sources */,
+				89EB30CB1ABE8BAE0041F60A /* Server.swift in Sources */,
 				89A1EAFB1ABE4084008F03B3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,9 +404,12 @@
 			baseConfigurationReference = 5FEC068A8005A708BB509F97 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Reserve a Server/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Reserve a Server/Reserve a Server-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -409,9 +418,11 @@
 			baseConfigurationReference = F082170FA88B8A40F142FA7E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Reserve a Server/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Reserve a Server/Reserve a Server-Bridging-Header.h";
 			};
 			name = Release;
 		};
