@@ -10,12 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     let fb = Firebase(url: "https://dazzling-fire-7049.firebaseio.com/")!
+    var servers : Array<(String, Bool)> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        fb.observeEventType(.Value, withBlock: displayValues)
+        fb.observeEventType(.Value, withBlock: populateServerList)
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,8 +24,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func displayValues(fds : FDataSnapshot!) -> Void {
-        println(fds.value)
+    func populateServerList(fds : FDataSnapshot!) -> Void {
+        let serverList = fds.value["servers"] as Dictionary<String, Bool>
+        
+        servers = map(serverList, {s in s})
+        println(servers)
     }
 
 
