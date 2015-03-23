@@ -25,7 +25,7 @@ class ServerCellView: UITableViewCell {
 
     func setFromServer(server: Server) {
         serverName.text = server.name
-        isInUse.enabled = server.inUse
+        isInUse.on = server.inUse
     }
     
 }

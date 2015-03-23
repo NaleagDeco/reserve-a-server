@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource {
-    let fb = Firebase(url: "https://dazzling-fire-7049.firebaseio.com/")
+    let fb = Firebase(url: "https://dazzling-fire-7049.firebaseio.com/").childByAppendingPath("servers")
     let cellIdentifier = "ServerItem"
     
     var servers: [Server] = []
@@ -33,7 +33,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     func populateServerList(fds : FDataSnapshot!) {
         showLoadingView()
         
-        let serverList = fds.value["servers"] as [String: Bool]
+        let serverList = fds.value as [String: Bool]
         
         servers = map(serverList, {s in Server(s)})
         tableView.reloadData()
@@ -70,6 +70,9 @@ class ViewController: UIViewController, UITableViewDataSource {
     // MARK: Switch functionality
     
     @IBAction func toggleSwitch(sender: UISwitch) {
+        let key = servers[sender.tag].name
+        
         servers[sender.tag].inUse = sender.on
+        fb.childByAppendingPath(key).setValue(sender.on)
     }
 }
