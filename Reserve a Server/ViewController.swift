@@ -59,9 +59,17 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as ServerCellView
-        let server = servers[indexPath.row]
+        let row = indexPath.row
+        cell.isInUse.tag = row
+        let server = servers[row]
         
         cell.setFromServer(server)
         return cell
+    }
+    
+    // MARK: Switch functionality
+    
+    @IBAction func toggleSwitch(sender: UISwitch) {
+        servers[sender.tag].inUse = sender.on
     }
 }
