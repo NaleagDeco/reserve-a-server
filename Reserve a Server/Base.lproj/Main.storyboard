@@ -66,23 +66,30 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="gnc-Vh-VGN"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zWK-6R-YEf">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3E0-E2-jCb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="3yr-ex-NyZ"/>
                             <constraint firstAttribute="bottom" secondItem="3E0-E2-jCb" secondAttribute="bottom" constant="20" symbolic="YES" id="6pg-yV-tMd"/>
+                            <constraint firstItem="zWK-6R-YEf" firstAttribute="centerX" secondItem="eOF-7d-tHu" secondAttribute="centerX" id="AOO-QK-60p"/>
                             <constraint firstItem="3E0-E2-jCb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Apu-Mh-EKG"/>
+                            <constraint firstItem="zWK-6R-YEf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JZu-5G-F6E"/>
                             <constraint firstItem="3E0-E2-jCb" firstAttribute="centerX" secondItem="eOF-7d-tHu" secondAttribute="centerX" id="THc-0l-Ah9"/>
                             <constraint firstItem="3E0-E2-jCb" firstAttribute="top" secondItem="eOF-7d-tHu" secondAttribute="bottom" constant="8" symbolic="YES" id="pS7-QZ-DDO"/>
                             <constraint firstItem="eOF-7d-tHu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="r8I-Yr-NZB"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="spinner" destination="zWK-6R-YEf" id="PVn-7y-71Q"/>
                         <outlet property="tableView" destination="3E0-E2-jCb" id="nkv-gy-ldM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="272" y="423"/>
         </scene>
     </scenes>
 </document>

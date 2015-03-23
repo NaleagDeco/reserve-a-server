@@ -12,14 +12,16 @@ class ViewController: UIViewController, UITableViewDataSource {
     let fb = Firebase(url: "https://dazzling-fire-7049.firebaseio.com/")
     let cellIdentifier = "ServerItem"
     
-    var servers : [Server] = []
+    var servers: [Server] = []
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        showLoadingView()
         fb.observeEventType(.Value, withBlock: populateServerList)
     }
 
@@ -29,10 +31,24 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func populateServerList(fds : FDataSnapshot!) {
+        showLoadingView()
+        
         let serverList = fds.value["servers"] as [String: Bool]
         
         servers = map(serverList, {s in Server(s)})
         tableView.reloadData()
+        
+        hideLoadingView()
+    }
+    
+    func showLoadingView() {
+        spinner.startAnimating()
+        spinner.hidden = false
+    }
+    
+    func hideLoadingView() {
+        spinner.hidden = true;
+        spinner.stopAnimating()
     }
     
     // MARK: UITableViewDataSource conformity
